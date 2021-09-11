@@ -13,7 +13,6 @@
   (add-to-list 'auto-mode-alist '("\\.chart\\'" . chart-mode))
   (setq-local comment-start "--")
   (set (make-local-variable 'comment-start) "--")
-  ;; (set (make-local-variable 'comment-start) ";")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
   (set (make-local-variable 'comment-use-syntax) t)
@@ -30,9 +29,6 @@
              . font-lock-builtin-face)
             ("^[ {\t]*\\([^[:space:]]+?\\)[ \t]*="
              . (1 font-lock-keyword-face))
-            ;; key value
-            ;; ("^[ \t]*\\([^\000- ]+\\)"
-            ;;  . (1 font-lock-keyword-face))
             ))))
 
 (provide 'chart-mode)
