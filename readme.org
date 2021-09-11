@@ -1,7 +1,7 @@
 * chart
 
 - no indentation-based syntax
-- no implicit type conversion
+- no implicit conversion
 - no commas required when writing values
 
 ** Syntax
