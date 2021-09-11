@@ -1,0 +1,13 @@
+* chart-mode : a configuration file format for me
+
+** Syntax
+#+begin_src text
+key   ::= symbol
+value ::= <int> | <float> | <bool> | <string> | map | [value-1 value-2 ... value-n]
+pair  ::= key value
+map   ::= { pair ... pair }
+chart ::= pair ... pair
+#+end_src
+
+** Semantics
+TBD
