@@ -23,13 +23,8 @@
      (modify-syntax-entry ?: "w" syntax-table)
      syntax-table))
   (setq font-lock-defaults
-        `(,`(
-             (,(regexp-opt '("true" "false") 'symbols)
+        `(,`((,(regexp-opt '("true" "false") 'symbols)
               . font-lock-builtin-face)
-             ;; ("\\(#[^ \n]+\\)"
-             ;;  . (1 font-lock-constant-face))
-             ;; ("\\(:[^ \n]+\\)"
-             ;;  . (1 font-lock-constant-face))
              ("\\([^ \n]+\\)[ \t]+="
               . (1 font-lock-keyword-face))))))
 
