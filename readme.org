@@ -1,4 +1,4 @@
-* chart : a configuration language for my preference
+* chart
 
 ** Syntax
 #+begin_src text
