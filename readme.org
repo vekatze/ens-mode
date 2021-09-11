@@ -1,5 +1,10 @@
 * chart
 
+chart is a configuration language with:
+- no indentation based syntax
+- no implicit type conversion
+- no commas required when writing values
+
 ** Syntax
 #+begin_src text
 chart   ::= pair*
