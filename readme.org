@@ -15,6 +15,8 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 ** Semantics
 A chart is interpreted into a hashmap, as indicated in the following quasi-code:
 #+begin_src haskell
+type Key = String
+
 data Value
   = ValueInt Int
   | ValueFloat Double
@@ -23,7 +25,7 @@ data Value
   | ValueChart Chart
   | ValueList [Value]
 
-type Chart = [(String, Value)]
+type Chart = [(Key, Value)]
 
 data MapValue
  = MapValueInt Int
@@ -33,7 +35,7 @@ data MapValue
  | MapValueMap Map
  | MapValueList [Value]
 
-type Map = HashMap String MapValue
+type Map = HashMap Key MapValue
 
 evalChart :: Chart -> Map
 evalChart chart =
