@@ -1,4 +1,4 @@
-* chart: a configuration language
+* chart
 
 - no indentation-based syntax
 - no implicit type conversion
