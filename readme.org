@@ -13,7 +13,7 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 #+end_src
 
 ** Semantics
-A chart is interpreted as a hashmap, as indicated in the following quasi-code:
+A chart is interpreted into a hashmap, as indicated in the following quasi-code:
 #+begin_src haskell
 data Value
   = ValueInt Int
