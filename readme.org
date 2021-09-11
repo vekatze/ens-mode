@@ -3,9 +3,9 @@
 ** Syntax
 #+begin_src text
 key   ::= symbol
-value ::= <int> | <float> | <bool> | <string> | map | [value*]
+value ::= <int> | <float> | <bool> | <string> | map | [ value* ]
 pair  ::= key = value
-map   ::= { pair* }
+map   ::= { chart }
 chart ::= pair*
 #+end_src
 
@@ -13,7 +13,7 @@ chart ::= pair*
 TBD
 
 ** Example
-#+begin_src conf
+#+begin_src chart
 title = "foo"
 time = 12341234
 database = {
