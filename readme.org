@@ -36,8 +36,8 @@ database = {
     }
   ]
   dependencies = [
-    "http=//foo.bar.buz/aoeu"
-    "https=//github.com/hogehoge"
+    "http://foo.bar.buz/aoeu"
+    "https://github.com/hogehoge"
   ]
   connection-max = 5000
   real = 2.2322
