@@ -2,11 +2,11 @@
 
 ** Syntax
 #+begin_src text
+chart ::= pair*
+pair  ::= key = value
 key   ::= symbol
 value ::= <int> | <float> | <bool> | <string> | map | [ value* ]
-pair  ::= key = value
 map   ::= { chart }
-chart ::= pair*
 #+end_src
 
 ** Semantics
