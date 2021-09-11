@@ -5,8 +5,7 @@
 chart ::= pair*
 pair  ::= key = value
 key   ::= <symbol>
-value ::= <int> | <float> | <bool> | <string> | map | [ value* ]
-map   ::= { chart }
+value ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 #+end_src
 
 ** Semantics
