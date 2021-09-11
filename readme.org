@@ -37,11 +37,15 @@ type Map = HashMap String MapValue
 
 evalChart :: Chart -> Map
 evalChart chart =
+  evalChart' chart emptyMap
+
+evalChart' :: Chart -> Map -> Map
+evalChart' chart acc =
   case chart of
     [] ->
-      emptyMap
+      acc
     (key, value) : pairList ->
-      insert key (evalValue value) (evalChart pairList)
+      evalChart' (insert key (evalValue value) acc) pairList
 
 evalValue :: Value -> MapValue
 evalValue value =
