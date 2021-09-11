@@ -3,10 +3,10 @@
 ** Syntax
 #+begin_src text
 key   ::= symbol
-value ::= <int> | <float> | <bool> | <string> | map | [value-1 value-2 ... value-n]
+value ::= <int> | <float> | <bool> | <string> | map | [value*]
 pair  ::= key = value
-map   ::= { pair ... pair }
-chart ::= pair ... pair
+map   ::= { pair* }
+chart ::= pair*
 #+end_src
 
 ** Semantics
