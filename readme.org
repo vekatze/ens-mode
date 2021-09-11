@@ -15,6 +15,7 @@ TBD
 #+begin_src chart
 title = "foo"
 time = "12341234" -- comment
+empty = {}
 database = {
   server = "192.168.11.1"
   items = [ true false false ]
@@ -24,7 +25,8 @@ database = {
     { foo = "aoeu" } -- heterogeneous
     8003
   ]
-  list-of-maps = [
+  empty-list = []
+  list-of-charts = [
     {
       foo = "some"
       hoge = true    -- bool
