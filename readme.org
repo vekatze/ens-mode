@@ -4,7 +4,7 @@
 #+begin_src text
 chart ::= pair*
 pair  ::= key = value
-key   ::= symbol
+key   ::= <symbol>
 value ::= <int> | <float> | <bool> | <string> | map | [ value* ]
 map   ::= { chart }
 #+end_src
