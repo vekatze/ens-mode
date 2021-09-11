@@ -11,7 +11,6 @@
 (define-derived-mode chart-mode prog-mode "chart"
   "A major mode for Chart programming language."
   (add-to-list 'auto-mode-alist '("\\.chart\\'" . chart-mode))
-  (setq-local comment-start "--")
   (set (make-local-variable 'comment-start) "--")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
@@ -20,16 +19,13 @@
    (let ((syntax-table (make-syntax-table)))
      (modify-syntax-entry ?- "w 12b" syntax-table)
      (modify-syntax-entry ?\n "> b" syntax-table)
-     (modify-syntax-entry ?? "w" syntax-table)
-     (modify-syntax-entry ?. "w" syntax-table)
+     (modify-syntax-entry ?# "w" syntax-table)
      syntax-table))
   (setq font-lock-defaults
-        `(,`(
-            (,(regexp-opt '("true" "false") 'symbols)
-             . font-lock-builtin-face)
-            ("^[ {\t]*\\([^[:space:]]+?\\)[ \t]*="
-             . (1 font-lock-keyword-face))
-            ))))
+        `(,`(("\\(#[^ \n]+\\)"
+              . (1 font-lock-constant-face))
+             ("\\([^ \n]+\\)[ \t]+="
+              . (1 font-lock-keyword-face))))))
 
 (provide 'chart-mode)
 

@@ -2,10 +2,11 @@
 
 ** Syntax
 #+begin_src text
-chart ::= pair*
-pair  ::= key = value
-key   ::= <symbol>
-value ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
+chart   ::= pair*
+pair    ::= key = value
+key     ::= <symbol>
+sharp   ::= <int> | <float> | <bool>
+value   ::= #sharp | <string> | <symbol> | { chart } | [ value* ]
 #+end_src
 
 ** Semantics
@@ -13,33 +14,42 @@ TBD
 
 ** Example
 #+begin_src chart
-title = "foo"
-time = 12341234
+title = foo
+time = 12341234 -- string
 database = {
-  server = "192.168.11.1"
-  items = [ true false true ]
+  server = 192.168.11.1
+  items = [ #true #false #false ]
   ports = [
-    8001
-    8002
-    { foo = "aoeu" }
-    8003
+    #8001
+    #8002
+    { foo = aoeu }
+    #8003
   ]
   list-of-maps = [
     {
-      foo = "some content"
-      hoge = true
+      foo = some
+      hoge = #true -- bool
+      pohe = true  -- string
     }
     {
       pohe = "lorem ipsum"
-      aoeu = [10 20 30 40]
+      aoeu = [ #10 #20 #30 #40 ]
     }
   ]
+  -- some comment.
   dependencies = [
-    "http://foo.bar.buz/aoeu"
-    "https://github.com/hogehoge"
+    https://github.com/veka41/chart
+    https://github.com/hogehoge
   ]
-  connection-max = 5000
-  real = 2.2322
-  enabled = true
+  connection-max = #5000
+  real = #2.2322
+  enabled = #true
 }
+item = [
+  foo
+  bar
+]
+foo = 123 -- string
+foo = #123 -- integer
+
 #+end_src
