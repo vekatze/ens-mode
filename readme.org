@@ -33,7 +33,7 @@ data MapValue
  | MapValueBool Bool
  | MapValueString String
  | MapValueMap Map
- | MapValueList [Value]
+ | MapValueList [MapValue]
 
 type Map = HashMap Key MapValue
 
