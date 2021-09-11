@@ -21,7 +21,7 @@ database = {
   ports = [
     8001
     8002
-    { foo = "aoeu" }
+    { foo = "aoeu" } -- heterogeneous
     8003
   ]
   list-of-maps = [
