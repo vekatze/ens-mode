@@ -1,0 +1,31 @@
+-- ここではトップレベルのmapが暗黙に入っている。
+title = "foo" -- これはホントの1要素で、listとは区別される。
+time = 12341234
+database = {
+  server = "192.168.11.1" -- コメントも好きに書けます。
+  items = [ true false true ]
+  ports = [
+    8001
+    8002
+    { foo = "aoeu" }
+    8003
+  ]
+  list-of-maps = [
+    {
+      foo = "some content"
+      hoge = true
+    }
+    {
+      pohe = "lorem ipsum"
+      aoeu = [10 20 30 40]
+    }
+  ]
+  -- some comment.
+  dependencies = [
+    "http=//foo.bar.buz/aoeu"
+    "https=//github.com/hogehoge"
+  ]
+  connection-max = 5000
+  real = 2.2322
+  enabled = true
+}
