@@ -12,7 +12,7 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 TBD
 
 ** Example
-#+begin_src chart
+#+begin_src sh
 title = "foo"
 time = "12341234" -- comment
 database = {
