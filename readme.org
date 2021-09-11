@@ -13,7 +13,52 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 #+end_src
 
 ** Semantics
-TBD
+A chart is interpreted as a hashmap, as indicated in the following quasi-code:
+#+begin_src haskell
+data Value
+  = ValueInt Int
+  | ValueFloat Double
+  | ValueBool Bool
+  | ValueString String
+  | ValueChart Chart
+  | ValueList [Value]
+
+type Chart = [(String, Value)]
+
+data MapValue
+ = MapValueInt Int
+ | MapValueFloat Double
+ | MapValueBool Bool
+ | MapValueString String
+ | MapValueMap Map
+ | MapValueList [Value]
+
+type Map = HashMap String MapValue
+
+evalChart :: Chart -> Map
+evalChart chart =
+  case chart of
+    [] ->
+      emptyMap
+    (key, value) : pairList ->
+      insert key (evalValue value) (evalChart pairList)
+
+evalValue :: Value -> MapValue
+evalValue value =
+  case value of
+    ValueInt x ->
+      MapValueInt x
+    ValueFloat x ->
+      MapValueFloat x
+    ValueBool x ->
+      MapValueBool x
+    ValueString x ->
+      MapValueString x
+    ValueChart x ->
+      MapValueMap (evalChart x)
+    ValueList xs ->
+      MapValueList (map evalValue xs)
+#+end_src
 
 ** Example
 #+begin_src chart
