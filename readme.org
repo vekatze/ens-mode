@@ -4,6 +4,43 @@
 - no implicit conversion
 - no commas required when writing values
 
+** Example
+#+begin_src chart
+title = "foo"
+time = "12341234" -- comment
+empty = {}
+database = {
+  server = "192.168.11.1"
+  items = [ true false false ]
+  ports = [
+    8001
+    8002
+    { foo = "aoeu" } -- heterogeneous
+    8003
+  ]
+  empty-list = []
+  list-of-charts = [
+    {
+      foo = "some"
+      hoge = true    -- bool
+      pohe = "true"  -- string
+    }
+    {
+      pohe = "lorem ipsum"
+      aoeu = [ 10 20 30 40 ]
+    }
+  ]
+  -- some comment.
+  dependencies = [
+    "https://github.com/veka41/chart"
+    "https://github.com/hogehoge"
+  ]
+  connection-max = 5000
+  real = 2.2322
+  enabled = true
+}
+#+end_src
+
 ** Syntax
 #+begin_src text
 chart   ::= pair*
@@ -66,41 +103,4 @@ evalValue value =
       MapValueMap (evalChart x)
     ValueList xs ->
       MapValueList (map evalValue xs)
-#+end_src
-
-** Example
-#+begin_src chart
-title = "foo"
-time = "12341234" -- comment
-empty = {}
-database = {
-  server = "192.168.11.1"
-  items = [ true false false ]
-  ports = [
-    8001
-    8002
-    { foo = "aoeu" } -- heterogeneous
-    8003
-  ]
-  empty-list = []
-  list-of-charts = [
-    {
-      foo = "some"
-      hoge = true    -- bool
-      pohe = "true"  -- string
-    }
-    {
-      pohe = "lorem ipsum"
-      aoeu = [ 10 20 30 40 ]
-    }
-  ]
-  -- some comment.
-  dependencies = [
-    "https://github.com/veka41/chart"
-    "https://github.com/hogehoge"
-  ]
-  connection-max = 5000
-  real = 2.2322
-  enabled = true
-}
 #+end_src
