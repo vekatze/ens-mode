@@ -1,4 +1,6 @@
-# ni: a map notation
+# ni
+
+ni /en-eye/ is a map notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
