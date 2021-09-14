@@ -1,16 +1,16 @@
-;;; chart-mode.el --- chart mode -*- lexical-binding: t; -*-
+;;; enti-mode.el --- enti mode -*- lexical-binding: t; -*-
 
 ;; Author: veka41 <veka41@protonmail.ch>
 
 ;;; Commentary:
 
-;; A major mode for chart configuration language.
+;; A major mode for enti configuration language.
 
 ;;; Code:
 
-(define-derived-mode chart-mode prog-mode "chart"
-  "A major mode for Chart programming language."
-  (add-to-list 'auto-mode-alist '("\\.chart\\'" . chart-mode))
+(define-derived-mode enti-mode prog-mode "enti"
+  "A major mode for Enti programming language."
+  (add-to-list 'auto-mode-alist '("\\.enti\\'" . enti-mode))
   (set (make-local-variable 'comment-start) "--")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
@@ -28,6 +28,6 @@
              ("\\([^ \n]+\\)[ \t]+="
               . (1 font-lock-keyword-face))))))
 
-(provide 'chart-mode)
+(provide 'enti-mode)
 
-;;; chart-mode.el ends here
+;;; enti-mode.el ends here
