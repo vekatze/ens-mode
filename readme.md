@@ -45,10 +45,10 @@ database = {
 
 ## Syntax
 ``` text
-chart   ::= pair#
+chart   ::= pair*
 pair    ::= key = value
 key     ::= <symbol>
-value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value# ]
+value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
 ```
 
 ## Semantics
