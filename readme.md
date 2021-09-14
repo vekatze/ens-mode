@@ -1,4 +1,4 @@
-# xt dictionary notation
+# ni dictionary notation
 
 - no indentation-based syntax
 - no implicit conversion
@@ -50,7 +50,7 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value# ]
 ```
 
 ## Semantics
-A chart is interpreted into a hashmap, as indicated in the following quasi-code:
+A ni is interpreted into a hashmap, as indicated in the following quasi-code:
 ``` haskell
 type Chart = [Pair]
 
