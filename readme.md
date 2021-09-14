@@ -21,7 +21,7 @@ database = {
     8003
   ]
   empty-list = []
-  list-of-entitys = [
+  list-of-entities = [
     {
       foo = "some"
       hoge = true    -- bool
@@ -40,6 +40,7 @@ database = {
   connection-max = 5000
   real = 2.2322
   enabled = true
+  foo = "bar" buz = "qux" -- technically correct, though not recommended
 }
 ```
 
@@ -50,6 +51,9 @@ pair    ::= key = value
 key     ::= <symbol>
 value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 ```
+
+- encoding: utf-8
+- newline: \n
 
 ## Semantics
 *.ento is interpreted into a map, as indicated in the following quasi-code:
