@@ -1,4 +1,4 @@
-# ent : a notation for entties
+# ent : a notation for entities
 
 ent is a entity notation with the following characteristics:
 
