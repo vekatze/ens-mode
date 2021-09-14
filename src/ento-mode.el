@@ -1,16 +1,16 @@
-;;; enti-mode.el --- enti mode -*- lexical-binding: t; -*-
+;;; ento-mode.el --- ento mode -*- lexical-binding: t; -*-
 
 ;; Author: veka41 <veka41@protonmail.ch>
 
 ;;; Commentary:
 
-;; A major mode for enti configuration language.
+;; A major mode for ento configuration language.
 
 ;;; Code:
 
-(define-derived-mode enti-mode prog-mode "enti"
-  "A major mode for Enti programming language."
-  (add-to-list 'auto-mode-alist '("\\.enti\\'" . enti-mode))
+(define-derived-mode ento-mode prog-mode "ento"
+  "A major mode for Ento programming language."
+  (add-to-list 'auto-mode-alist '("\\.ento\\'" . ento-mode))
   (set (make-local-variable 'comment-start) "--")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
@@ -28,6 +28,6 @@
              ("\\([^ \n]+\\)[ \t]+="
               . (1 font-lock-keyword-face))))))
 
-(provide 'enti-mode)
+(provide 'ento-mode)
 
-;;; enti-mode.el ends here
+;;; ento-mode.el ends here
