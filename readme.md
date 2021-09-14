@@ -1,6 +1,6 @@
-# ni
+# enti : a notation for entities
 
-ni /en-eye/ is a map notation with the following characteristics:
+enti is a entity notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
