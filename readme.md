@@ -1,4 +1,4 @@
-# ni dictionary notation
+# ni: a map notation
 
 - no indentation-based syntax
 - no implicit conversion
@@ -50,7 +50,7 @@ value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value# ]
 ```
 
 ## Semantics
-A ni is interpreted into a hashmap, as indicated in the following quasi-code:
+*.ni is interpreted into a map, as indicated in the following quasi-code:
 ``` haskell
 type Chart = [Pair]
 
