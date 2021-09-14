@@ -7,7 +7,7 @@ ent is a entity notation with the following characteristics:
 - no commas required when writing values
 
 ## Example
-``` chart
+``` ent
 title = "foo"
 time = "12341234" -- comment
 empty = {}
@@ -21,7 +21,7 @@ database = {
     8003
   ]
   empty-list = []
-  list-of-charts = [
+  list-of-entitys = [
     {
       foo = "some"
       hoge = true    -- bool
@@ -34,7 +34,7 @@ database = {
   ]
   -- some comment.
   dependencies = [
-    "https://github.com/veka41/chart"
+    "https://github.com/veka41/ent"
     "https://github.com/hogehoge"
   ]
   connection-max = 5000
@@ -79,12 +79,12 @@ data MapValue
  | MapValueList [MapValue]
 
 evalEntity :: Entity -> Map
-evalEntity chart =
-  evalEntity' chart emptyMap
+evalEntity entity =
+  evalEntity' entity emptyMap
 
 evalEntity' :: Entity -> Map -> Map
-evalEntity' chart acc =
-  case chart of
+evalEntity' entity acc =
+  case entity of
     [] ->
       acc
     (key, value) : pairList ->
