@@ -1,11 +1,11 @@
-* chart
+# xt dictionary notation
 
 - no indentation-based syntax
 - no implicit conversion
 - no commas required when writing values
 
-** Example
-#+begin_src chart
+## Example
+``` chart
 title = "foo"
 time = "12341234" -- comment
 empty = {}
@@ -39,19 +39,19 @@ database = {
   real = 2.2322
   enabled = true
 }
-#+end_src
+```
 
-** Syntax
-#+begin_src text
-chart   ::= pair*
+## Syntax
+``` text
+chart   ::= pair#
 pair    ::= key = value
 key     ::= <symbol>
-value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
-#+end_src
+value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value# ]
+```
 
-** Semantics
+## Semantics
 A chart is interpreted into a hashmap, as indicated in the following quasi-code:
-#+begin_src haskell
+``` haskell
 type Chart = [Pair]
 
 type Pair = (Key, Value)
@@ -103,4 +103,4 @@ evalValue value =
       MapValueMap (evalChart x)
     ValueList xs ->
       MapValueList (map evalValue xs)
-#+end_src
+```
