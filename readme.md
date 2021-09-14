@@ -1,13 +1,13 @@
-# enti : a notation for entities
+# ento : a notation for entities
 
-enti is a entity notation with the following characteristics:
+ento is a entity notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
 - no commas required when writing values
 
 ## Example
-``` enti
+``` ento
 title = "foo"
 time = "12341234" -- comment
 empty = {}
@@ -52,7 +52,7 @@ value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 ```
 
 ## Semantics
-*.enti is interpreted into a map, as indicated in the following quasi-code:
+*.ento is interpreted into a map, as indicated in the following quasi-code:
 ``` haskell
 type Entity = [Pair]
 
