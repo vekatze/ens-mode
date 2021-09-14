@@ -1,6 +1,6 @@
-# enti : a notation for entities
+# ent : a notation for entties
 
-enti is a entity notation with the following characteristics:
+ent is a entity notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
@@ -45,16 +45,16 @@ database = {
 
 ## Syntax
 ``` text
-chart   ::= pair*
+entity  ::= pair*
 pair    ::= key = value
 key     ::= <symbol>
-value   ::= <int> | <float> | <bool> | <string> | { chart } | [ value* ]
+value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 ```
 
 ## Semantics
 *.ni is interpreted into a map, as indicated in the following quasi-code:
 ``` haskell
-type Chart = [Pair]
+type Entity = [Pair]
 
 type Pair = (Key, Value)
 
@@ -65,7 +65,7 @@ data Value
   | ValueFloat Double
   | ValueBool Bool
   | ValueString String
-  | ValueChart Chart
+  | ValueEntity Entity
   | ValueList [Value]
 
 type Map = HashMap Key MapValue
@@ -78,17 +78,17 @@ data MapValue
  | MapValueMap Map
  | MapValueList [MapValue]
 
-evalChart :: Chart -> Map
-evalChart chart =
-  evalChart' chart emptyMap
+evalEntity :: Entity -> Map
+evalEntity chart =
+  evalEntity' chart emptyMap
 
-evalChart' :: Chart -> Map -> Map
-evalChart' chart acc =
+evalEntity' :: Entity -> Map -> Map
+evalEntity' chart acc =
   case chart of
     [] ->
       acc
     (key, value) : pairList ->
-      evalChart' (insert key (evalValue value) acc) pairList
+      evalEntity' (insert key (evalValue value) acc) pairList
 
 evalValue :: Value -> MapValue
 evalValue value =
@@ -101,8 +101,8 @@ evalValue value =
       MapValueBool x
     ValueString x ->
       MapValueString x
-    ValueChart x ->
-      MapValueMap (evalChart x)
+    ValueEntity x ->
+      MapValueMap (evalEntity x)
     ValueList xs ->
       MapValueList (map evalValue xs)
 ```
