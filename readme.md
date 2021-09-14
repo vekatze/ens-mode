@@ -1,13 +1,13 @@
-# ent : a notation for entities
+# enti : a notation for entities
 
-ent is a entity notation with the following characteristics:
+enti is a entity notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
 - no commas required when writing values
 
 ## Example
-``` ent
+``` enti
 title = "foo"
 time = "12341234" -- comment
 empty = {}
@@ -52,7 +52,7 @@ value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 ```
 
 ## Semantics
-*.ni is interpreted into a map, as indicated in the following quasi-code:
+*.enti is interpreted into a map, as indicated in the following quasi-code:
 ``` haskell
 type Entity = [Pair]
 
