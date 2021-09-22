@@ -1,16 +1,16 @@
-;;; ento-mode.el --- ento mode -*- lexical-binding: t; -*-
+;;; sui-mode.el --- sui mode -*- lexical-binding: t; -*-
 
 ;; Author: veka41 <veka41@protonmail.ch>
 
 ;;; Commentary:
 
-;; A major mode for ento configuration language.
+;; A major mode for sui configuration language.
 
 ;;; Code:
 
-(define-derived-mode ento-mode prog-mode "ento"
-  "A major mode for Ento programming language."
-  (add-to-list 'auto-mode-alist '("\\.ento\\'" . ento-mode))
+(define-derived-mode sui-mode prog-mode "sui"
+  "A major mode for sui."
+  (add-to-list 'auto-mode-alist '("\\.sui\\'" . sui-mode))
   (set (make-local-variable 'comment-start) "--")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
@@ -28,6 +28,6 @@
              ("\\([^ \n]+\\)[ \t]+="
               . (1 font-lock-keyword-face))))))
 
-(provide 'ento-mode)
+(provide 'sui-mode)
 
-;;; ento-mode.el ends here
+;;; sui-mode.el ends here
