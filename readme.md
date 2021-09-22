@@ -1,6 +1,6 @@
-# ento : a notation for entities
+# sui : a notation for entities
 
-ento is a entity notation with the following characteristics:
+sui is a entity notation with the following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
@@ -56,7 +56,7 @@ value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 - newline: \n
 
 ## Semantics
-*.ento is interpreted into a map, as indicated in the following quasi-code:
+`*.sui` is interpreted into a map, as indicated in the following quasi-code:
 ``` haskell
 type Entity = [Pair]
 
