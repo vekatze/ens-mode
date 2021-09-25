@@ -1,4 +1,4 @@
-# sui : a notation for entities
+# sui
 
 sui is a entity notation with the following characteristics:
 
