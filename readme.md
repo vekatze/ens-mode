@@ -1,6 +1,6 @@
 # kv
 
-kv is a key-value notation with the following characteristics:
+kv is a notation for key-value pairs. This notation has following characteristics:
 
 - no indentation-based syntax
 - no implicit conversion
