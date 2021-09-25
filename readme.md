@@ -1,48 +1,48 @@
 # kv
 
-kv is a notation for key-value pairs. This notation has following characteristics:
+kv is a key-value notation with following properties:
 
 - no indentation-based syntax
 - no implicit conversion
 - no commas required when writing values
 
 ## Example
-``` ento
-table = {
-  title = "foo"
-  time = "12341234" -- comment
-  empty = {}
-  database = {
-    server = "192.168.11.1"
-    items = [ true false false ]
-    ports = [
-      8001
-      8002
-      { foo = "aoeu" } -- heterogeneous
-      8003
-    ]
-    empty-list = []
-    list-of-entities = [
-      {
-        foo = "some"
-        hoge = true    -- bool
-        pohe = "true"  -- string
-      }
-      {
-        pohe = "lorem ipsum"
-        aoeu = [ 10 20 30 40 ]
-      }
-    ]
-    -- some comment.
-    dependencies = [
-      "https://github.com/veka41/ent"
-      "https://github.com/hogehoge"
-    ]
-    connection-max = 5000
-    real = 2.2322
-    enabled = true
-    foo = "bar" buz = "qux" -- technically correct, though not recommended
-  }
+``` kv
+title = "foo"
+time = "12341234" -- comment
+binary-integer = 0b10101111
+hex-integer = 0xdeadbeef
+empty = {}
+database = {
+  server = "192.168.11.1"
+  items = [ true false false ]
+  ports = [
+    8001
+    8002
+    { foo = "aoeu" } -- heterogeneous
+    8003
+  ]
+  empty-list = []
+  list-of-entities = [
+    {
+      foo = "some"
+      hoge = true    -- bool
+      pohe = "true"  -- string
+    }
+    {
+      pohe = "lorem ipsum"
+      aoeu = [ 10 20 30 40 ]
+    }
+  ]
+  -- some comment.
+  dependencies = [
+    "https://github.com/veka41/ent"
+    "https://github.com/hogehoge"
+  ]
+  connection-max = 5000
+  real = 2.2322
+  enabled = true
+  foo = "bar" buz = "qux" -- technically correct, though not recommended
 }
 ```
 
