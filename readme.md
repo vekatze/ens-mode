@@ -11,10 +11,18 @@ kv is a key-value notation with following properties:
 title = "foo"
 time = "12341234" -- comment
 binary-integer = 0b10101111
+octal-integer = 0o81234
 hex-integer = 0xdeadbeef
 empty = {}
 database = {
   server = "192.168.11.1"
+  name = "install system packages"
+  run = [
+    "apt-get update"
+    "apt-get install -y cron foo bar"
+    "apt-get install hogehoge"
+    "rm -rf /var/lib/apt/lists/*"
+  ]
   items = [ true false false ]
   ports = [
     8001
@@ -35,23 +43,15 @@ database = {
     }
   ]
   -- some comment.
-  dependencies = [
-    "https://github.com/veka41/ent"
-    "https://github.com/hogehoge"
-  ]
   connection-max = 5000
   real = 2.2322
-  enabled = true
-  foo = "bar" buz = "qux" -- technically correct, though not recommended
 }
 ```
 
 ## Syntax
 ``` text
-entity  ::= pair*
-pair    ::= key = value
 key     ::= <symbol>
-value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
+value   ::= <int> | <float> | <bool> | <string> | { (key = value)* } | [ value* ]
 ```
 
 - encoding: utf-8
@@ -60,6 +60,8 @@ value   ::= <int> | <float> | <bool> | <string> | { entity } | [ value* ]
 ## Semantics
 `*.kv` is interpreted into a key-value map, as indicated in the following quasi-code:
 ``` haskell
+type Map = HashMap Key MapValue
+
 type Entity = [Pair]
 
 type Pair = (Key, Value)
@@ -73,8 +75,6 @@ data Value
   | ValueString String
   | ValueEntity Entity
   | ValueList [Value]
-
-type Map = HashMap Key MapValue
 
 data MapValue
  = MapValueInt Int

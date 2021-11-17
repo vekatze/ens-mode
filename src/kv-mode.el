@@ -1,16 +1,16 @@
-;;; sui-mode.el --- sui mode -*- lexical-binding: t; -*-
+;;; kv-mode.el --- kv mode -*- lexical-binding: t; -*-
 
 ;; Author: veka41 <veka41@protonmail.ch>
 
 ;;; Commentary:
 
-;; A major mode for sui configuration language.
+;; A major mode for kv configuration language.
 
 ;;; Code:
 
-(define-derived-mode sui-mode prog-mode "sui"
-  "A major mode for sui."
-  (add-to-list 'auto-mode-alist '("\\.sui\\'" . sui-mode))
+(define-derived-mode kv-mode prog-mode "kv"
+  "A major mode for kv."
+  (add-to-list 'auto-mode-alist '("\\.kv\\'" . kv-mode))
   (set (make-local-variable 'comment-start) "--")
   (set (make-local-variable 'comment-end) "")
   (set (make-local-variable 'comment-padding) 1)
@@ -28,6 +28,6 @@
              ("\\([^ \n]+\\)[ \t]+="
               . (1 font-lock-keyword-face))))))
 
-(provide 'sui-mode)
+(provide 'kv-mode)
 
-;;; sui-mode.el ends here
+;;; kv-mode.el ends here
