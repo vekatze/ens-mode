@@ -1,4 +1,4 @@
-# kv
+* kv
 
 kv is a key-value notation with following properties:
 
@@ -6,8 +6,8 @@ kv is a key-value notation with following properties:
 - no implicit conversion
 - no commas required when writing values
 
-## Example
-``` kv
+** Example
+#+begin_src kv
 title = "foo"
 time = "12341234" -- comment
 binary-integer = 0b10101111
@@ -46,20 +46,20 @@ database = {
   connection-max = 5000
   real = 2.2322
 }
-```
+#+end_src
 
-## Syntax
-``` text
+** Syntax
+#+begin_src text
 key     ::= <symbol>
 value   ::= <int> | <float> | <bool> | <string> | { (key = value)* } | [ value* ]
-```
+#+end_src
 
 - encoding: utf-8
 - newline: \n
 
-## Semantics
-`*.kv` is interpreted into a key-value map, as indicated in the following quasi-code:
-``` haskell
+** Semantics
+~*.kv~ is interpreted into a key-value map, as indicated in the following quasi-code:
+#+begin_src haskell
 type Map = HashMap Key MapValue
 
 type Entity = [Pair]
@@ -111,4 +111,4 @@ evalValue value =
       MapValueMap (evalEntity x)
     ValueList xs ->
       MapValueList (map evalValue xs)
-```
+#+end_src
