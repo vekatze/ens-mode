@@ -9,7 +9,7 @@ ens is a key-value notation with following properties:
 ** Example
 #+begin_src ens
 title = "foo"
-time = "12341234" -- comment
+time = "12341234" // comment
 binary-integer = 0b10101111
 octal-integer = 0o81234
 hex-integer = 0xdeadbeef
@@ -27,22 +27,22 @@ database = {
   ports = [
     8001
     8002
-    { foo = "aoeu" } -- heterogeneous
+    { foo = "aoeu" } // heterogeneous
     8003
   ]
   empty-list = []
   list-of-entities = [
     {
       foo = "some"
-      hoge = true    -- bool
-      pohe = "true"  -- string
+      hoge = true    // bool
+      pohe = "true"  // string
     }
     {
       pohe = "lorem ipsum"
       aoeu = [ 10 20 30 40 ]
     }
   ]
-  -- some comment.
+  // some comment.
   connection-max = 5000
   real = 2.2322
 }
