@@ -1,5 +1,5 @@
 ;;; ens-mode.el --- ens mode -*- lexical-binding: t; -*-
-;; Author: veka <vekatze@icloud.com>
+;; Author: vekatze <vekatze@icloud.com>
 ;;; Commentary:
 ;; A major mode for ens configuration language.
 ;;; Code:
