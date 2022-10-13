@@ -1,13 +1,13 @@
-* kv
+* ens
 
-kv is a key-value notation with following properties:
+ens is a key-value notation with following properties:
 
 - no indentation-based syntax
 - no implicit conversion
 - no commas required when writing values
 
 ** Example
-#+begin_src kv
+#+begin_src ens
 title = "foo"
 time = "12341234" -- comment
 binary-integer = 0b10101111
@@ -58,7 +58,7 @@ value   ::= <int> | <float> | <bool> | <string> | { (key = value)* } | [ value* 
 - newline: \n
 
 ** Semantics
-~*.kv~ is interpreted into a key-value map, as indicated in the following quasi-code:
+~*.ens~ is interpreted into a key-value map, as indicated in the following quasi-code:
 #+begin_src haskell
 type Map = HashMap Key MapValue
 
