@@ -4,6 +4,7 @@
 ;; A major mode for ens configuration language.
 ;;; Code:
 
+;;;###autoload
 (define-derived-mode ens-mode prog-mode "ens"
   "A major mode for ens."
   (add-to-list 'auto-mode-alist '("\\.ens\\'" . ens-mode))
@@ -25,7 +26,7 @@
               . (1 font-lock-keyword-face))
              ))))
 
-(autoload 'ens-mode "ens-mode" nil t)
+;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.ens$" . ens-mode))
 
 (provide 'ens-mode)
