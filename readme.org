@@ -1,4 +1,4 @@
-* ens
+* ens-mode.el
 
 ens is a key-value notation with following properties:
 
