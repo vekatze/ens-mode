@@ -204,6 +204,8 @@ This function must be called from outside a string."
               . (1 font-lock-keyword-face))
              (,(regexp-opt '("target" "dependency" "foreign" "source" "extra-content" "archive" "build" "structure"))
               . font-lock-keyword-face)
+             (","
+              . font-lock-builtin-face)
              ))))
 
 ;;;###autoload
