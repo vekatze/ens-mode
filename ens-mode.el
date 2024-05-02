@@ -197,7 +197,7 @@ This function must be called from outside a string."
      syntax-table))
   (setq font-lock-defaults
         `(,`((,(regexp-opt '("true" "false") 'symbols)
-              . font-lock-builtin-face)
+              . font-lock-constant-face)
              (,(regexp-opt '("-") 'symbols)
               . font-lock-builtin-face)
              ("\\([^ \n]+\\)[ \t]+"
