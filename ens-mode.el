@@ -200,7 +200,7 @@ This function must be called from outside a string."
               . font-lock-constant-face)
              (,(regexp-opt '("-") 'symbols)
               . font-lock-builtin-face)
-             ("\\([^ \n]+\\)[ \t]+"
+             ("\\([^][ \t\n{}(),]+\\)"
               . (1 font-lock-keyword-face))
              (,(regexp-opt '("target" "dependency" "foreign" "source" "extra-content" "archive" "build" "structure"))
               . font-lock-keyword-face)
